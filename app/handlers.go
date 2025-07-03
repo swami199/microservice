@@ -7,6 +7,12 @@ import (
 	"net/http"
 )
 
+type Customer struct {
+	Name    string `json:"name" xml:"name"`
+	City    string `json:"city" xml:"city"`
+	Zipcode string `json:"zipcode" xml:"zipcode"`
+}
+
 func great(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Nuvu super ra bulloda")
 }

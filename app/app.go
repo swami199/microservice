@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func start() {
+func Start() {
 	http.HandleFunc("/great", great)
 	http.HandleFunc("/customers", getAllCustomers)
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
