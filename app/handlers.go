@@ -5,6 +5,8 @@ import (
 	"encoding/xml"
 	"fmt"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Customer struct {
@@ -29,4 +31,12 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 		xml.NewEncoder(w).Encode(customers)
 	}
 
+}
+func getCustomerById(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	fmt.Fprintf(w, vars["customer_id"])
+}
+
+func createCustomer(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "post")
 }
